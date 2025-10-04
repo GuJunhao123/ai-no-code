@@ -1,0 +1,57 @@
+spring:
+  application:
+    name: yu-ai-code-mother-backend
+  session:
+    store-type: redis
+    timeout: 2592000
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ${DB_URL:jdbc:mysql://localhost:3306/yu_ai_code_mother}
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD}
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+      password: ${REDIS_PASSWORD:}
+      database: 0
+      ttl: 86400
+server:
+  port: 8123
+  servlet:
+    context-path: /api
+knife4j:
+  enable: true
+  setting:
+    language: zh_cn
+langchain4j:
+  open-ai:
+    chat-model:
+      base-url: ${AI_BASE_URL:https://api-inference.modelscope.cn/v1}
+      api-key: ${AI_API_KEY}
+      model-name: ${AI_MODEL:Qwen/Qwen3.5-397B-A17B}
+      max-tokens: ${AI_MAX_TOKENS:50000}
+      log-requests: false
+      log-responses: false
+    streaming-chat-model:
+      base-url: ${AI_BASE_URL:https://api-inference.modelscope.cn/v1}
+      api-key: ${AI_API_KEY}
+      model-name: ${AI_MODEL:Qwen/Qwen3.5-397B-A17B}
+      max-tokens: ${AI_MAX_TOKENS:50000}
+      log-requests: false
+      log-responses: false
+    reasoning-streaming-chat-model:
+      base-url: ${AI_BASE_URL:https://api-inference.modelscope.cn/v1}
+      api-key: ${AI_API_KEY}
+      model-name: ${AI_REASONING_MODEL:${AI_MODEL:Qwen/Qwen3.5-397B-A17B}}
+      max-tokens: ${AI_MAX_TOKENS:50000}
+      temperature: 0.1
+      log-requests: false
+      log-responses: false
+    routing-chat-model:
+      base-url: ${AI_BASE_URL:https://api-inference.modelscope.cn/v1}
+      api-key: ${AI_API_KEY}
+      model-name: ${AI_ROUTING_MODEL:Qwen/Qwen3-4B-Instruct}
+      max-tokens: 1000
+      log-requests: false
+      log-responses: false

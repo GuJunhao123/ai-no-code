@@ -1,0 +1,26 @@
+# Local credentials and environment overrides
+.env
+.env.*
+!.env.example
+!**/.env.development
+*.local
+application-local.yml
+application-local.yaml
+application-prod.yml
+application-prod.yaml
+*.pem
+*.key
+*.p12
+*.jks
+
+# IDE, dependencies, build output and generated applications
+.idea/
+.vscode/
+node_modules/
+target/
+dist/
+tmp/
+logs/
+*.log
+.DS_Store
+Thumbs.db
