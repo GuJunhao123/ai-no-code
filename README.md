@@ -1,4 +1,4 @@
-# AI No-Code · AI 零代码应用生成平台
+# AI No-Code 应用生成平台
 
 基于 **Spring Boot + LangChain4j + Vue 3** 的全栈学习实践项目。用自然语言描述需求，由 AI 选择生成方式，完成代码生成、对话修改、在线预览、源码下载和静态发布。
 
